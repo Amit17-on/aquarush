@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Admin Dashboard | AquaRush</title><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
+<body data-page="admin"><header id="site-header"></header>
+<main class="page-wrap">
+<section class="page-intro compact"><span class="eyebrow">DEMO CONTROL PANEL</span><h1>Admin dashboard</h1><p>Review bookings, update delivery status and manage tanker options.</p></section>
+<div class="panel login-panel" id="admin-login"><h2>Admin demo login</h2><p class="muted">This password is only for classroom demonstration.</p><label for="admin-password">Password</label><input type="password" id="admin-password" placeholder="Enter demo password"><button class="btn btn-primary" id="admin-login-button">Login</button><small>Demo password: <b>admin123</b></small></div>
+<div id="admin-dashboard" hidden>
+  <div class="stats-grid" id="admin-stats"></div>
+  <div class="tabs"><button class="tab-button active" data-tab="bookings">Bookings</button><button class="tab-button" data-tab="tankers">Tanker management</button><button class="tab-button" data-tab="customers">Customers</button></div>
+  <section class="panel admin-panel" id="tab-bookings"><div class="panel-heading"><div><h2>All bookings</h2><p class="muted">Update progress as a booking moves through the demo workflow.</p></div><input class="search-input" type="search" id="admin-search" placeholder="Search booking or customer"></div><div class="table-wrap"><table><thead><tr><th>Booking ID</th><th>Customer</th><th>Tanker</th><th>Delivery</th><th>Total</th><th>Status</th><th>Update</th></tr></thead><tbody id="admin-bookings"></tbody></table></div></section>
+  <section class="panel admin-panel" id="tab-tankers" hidden><h2>Manage tanker options</h2><p class="muted">Add or update capacity, price and available quantity.</p><form id="tanker-form" class="admin-form"><input type="hidden" id="edit-tanker-id"><label>Tanker name<input id="admin-tanker-name" required placeholder="e.g. 3,000 Litre Tanker"></label><label>Capacity (litres)<input id="admin-tanker-capacity" type="number" min="1" required></label><label>Price per tanker (₹)<input id="admin-tanker-price" type="number" min="1" required></label><label>Available quantity<input id="admin-tanker-stock" type="number" min="0" required value="5"></label><button class="btn btn-primary" type="submit">Save tanker</button><button class="btn btn-outline" type="button" id="clear-tanker-form">Clear</button></form><div id="admin-tanker-list" class="admin-list"></div></section>
+  <section class="panel admin-panel" id="tab-customers" hidden><h2>Customer list</h2><div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Bookings</th></tr></thead><tbody id="admin-customers"></tbody></table></div></section>
+</div>
+</main><footer id="site-footer"></footer></body></html>
